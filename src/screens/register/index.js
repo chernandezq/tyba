@@ -5,9 +5,14 @@ import {TextInput, View, Text, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const Registro: () => React = props => {
+  const {navigation} = props;
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+
+  const navigateToRestaurants = () => {
+    navigation.navigate('Restaurantes');
+  };
 
   return (
     <View style={styles.container}>
@@ -43,7 +48,9 @@ const Registro: () => React = props => {
 
         <TouchableOpacity
           style={styles.boton}
-          onPress={() => {}}
+          onPress={() => {
+            navigateToRestaurants();
+          }}
           underlayColor="#fff">
           <Text style={styles.textoBoton}>Registrarme</Text>
         </TouchableOpacity>
