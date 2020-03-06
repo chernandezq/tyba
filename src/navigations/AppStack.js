@@ -1,8 +1,8 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
 import Login from '../screens/login';
-import {Text} from 'react-native';
 import Registro from '../screens/register';
+import Restaurantes from '../screens/restaurants';
+import {createStackNavigator} from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
@@ -30,6 +30,22 @@ const AppStack: () => React = () => {
         component={Registro}
         options={{
           title: 'Registro',
+          headerStyle: {
+            backgroundColor: '#18A283',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            alignItems: 'center',
+          },
+        }}
+      />
+
+      <Stack.Screen
+        name="Restaurantes"
+        component={Restaurantes}
+        options={{
+          title: 'Listado restaurantes',
           headerStyle: {
             backgroundColor: '#18A283',
           },
