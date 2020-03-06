@@ -5,11 +5,15 @@ import {TextInput, View, Text, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const Login: () => React = props => {
+  const {navigation} = props;
   const [email, setEmail] = React.useState('');
 
   const navigateToRegister = () => {
-    const {navigation} = props;
     navigation.navigate('Registro');
+  };
+
+  const navigateToRestaurants = () => {
+    navigation.navigate('Restaurantes');
   };
 
   return (
@@ -40,7 +44,9 @@ const Login: () => React = props => {
 
         <TouchableOpacity
           style={styles.boton}
-          onPress={() => {}}
+          onPress={() => {
+            navigateToRestaurants();
+          }}
           underlayColor="#fff">
           <Text style={styles.textoBoton}>Ingresar</Text>
         </TouchableOpacity>
